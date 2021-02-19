@@ -35,8 +35,13 @@ namespace Part_4___Random_Assignment
             this.numMinimum = new System.Windows.Forms.NumericUpDown();
             this.rdoIntegers = new System.Windows.Forms.RadioButton();
             this.rdoDoubles = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMaximum = new System.Windows.Forms.TextBox();
+            this.lblDecimalInterval = new System.Windows.Forms.Label();
+            this.numDecimalInterval = new System.Windows.Forms.NumericUpDown();
+            this.lblGetResult = new System.Windows.Forms.Button();
+            this.lblAnswer = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numMinimum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDecimalInterval)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInstructions
@@ -45,24 +50,26 @@ namespace Part_4___Random_Assignment
             this.lblInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.lblInstructions.Location = new System.Drawing.Point(12, 9);
             this.lblInstructions.Name = "lblInstructions";
-            this.lblInstructions.Size = new System.Drawing.Size(629, 24);
+            this.lblInstructions.Size = new System.Drawing.Size(644, 24);
             this.lblInstructions.TabIndex = 0;
-            this.lblInstructions.Text = "Please select numeric type, then enter a minimum and maximum number:";
+            this.lblInstructions.Text = "Please select a numeric type, then enter a minimum and maximum number:";
             // 
             // lblMinimum
             // 
             this.lblMinimum.AutoSize = true;
             this.lblMinimum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblMinimum.Location = new System.Drawing.Point(314, 45);
+            this.lblMinimum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblMinimum.Location = new System.Drawing.Point(432, 45);
             this.lblMinimum.Name = "lblMinimum";
-            this.lblMinimum.Size = new System.Drawing.Size(201, 20);
+            this.lblMinimum.Size = new System.Drawing.Size(76, 20);
             this.lblMinimum.TabIndex = 1;
-            this.lblMinimum.Text = "Minimum(use scroll wheel): ";
+            this.lblMinimum.Text = "Minimum:";
             // 
             // lblMaximum
             // 
             this.lblMaximum.AutoSize = true;
             this.lblMaximum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblMaximum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lblMaximum.Location = new System.Drawing.Point(432, 82);
             this.lblMaximum.Name = "lblMaximum";
             this.lblMaximum.Size = new System.Drawing.Size(84, 20);
@@ -110,28 +117,74 @@ namespace Part_4___Random_Assignment
             this.rdoDoubles.Text = "Doubles";
             this.rdoDoubles.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtMaximum
             // 
-            this.textBox1.Location = new System.Drawing.Point(522, 82);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(119, 20);
-            this.textBox1.TabIndex = 7;
+            this.txtMaximum.Location = new System.Drawing.Point(522, 82);
+            this.txtMaximum.Name = "txtMaximum";
+            this.txtMaximum.Size = new System.Drawing.Size(119, 20);
+            this.txtMaximum.TabIndex = 7;
+            // 
+            // lblDecimalInterval
+            // 
+            this.lblDecimalInterval.AutoSize = true;
+            this.lblDecimalInterval.Location = new System.Drawing.Point(12, 105);
+            this.lblDecimalInterval.Name = "lblDecimalInterval";
+            this.lblDecimalInterval.Size = new System.Drawing.Size(136, 13);
+            this.lblDecimalInterval.TabIndex = 8;
+            this.lblDecimalInterval.Text = "Decimal places to round to:";
+            // 
+            // numDecimalInterval
+            // 
+            this.numDecimalInterval.Location = new System.Drawing.Point(154, 103);
+            this.numDecimalInterval.Name = "numDecimalInterval";
+            this.numDecimalInterval.Size = new System.Drawing.Size(38, 20);
+            this.numDecimalInterval.TabIndex = 9;
+            this.numDecimalInterval.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // lblGetResult
+            // 
+            this.lblGetResult.Location = new System.Drawing.Point(485, 120);
+            this.lblGetResult.Name = "lblGetResult";
+            this.lblGetResult.Size = new System.Drawing.Size(156, 42);
+            this.lblGetResult.TabIndex = 10;
+            this.lblGetResult.Text = "Get Number!";
+            this.lblGetResult.UseVisualStyleBackColor = true;
+            this.lblGetResult.Click += new System.EventHandler(this.lblGetResult_Click);
+            // 
+            // lblAnswer
+            // 
+            this.lblAnswer.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblAnswer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblAnswer.Location = new System.Drawing.Point(336, 131);
+            this.lblAnswer.Name = "lblAnswer";
+            this.lblAnswer.Size = new System.Drawing.Size(143, 23);
+            this.lblAnswer.TabIndex = 11;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 371);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(659, 174);
+            this.Controls.Add(this.lblAnswer);
+            this.Controls.Add(this.lblGetResult);
+            this.Controls.Add(this.numDecimalInterval);
+            this.Controls.Add(this.lblDecimalInterval);
+            this.Controls.Add(this.txtMaximum);
             this.Controls.Add(this.rdoDoubles);
             this.Controls.Add(this.rdoIntegers);
             this.Controls.Add(this.numMinimum);
             this.Controls.Add(this.lblMaximum);
             this.Controls.Add(this.lblMinimum);
             this.Controls.Add(this.lblInstructions);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "frmMain";
             this.Text = "Number Generator";
             ((System.ComponentModel.ISupportInitialize)(this.numMinimum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDecimalInterval)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,7 +198,11 @@ namespace Part_4___Random_Assignment
         private System.Windows.Forms.NumericUpDown numMinimum;
         private System.Windows.Forms.RadioButton rdoIntegers;
         private System.Windows.Forms.RadioButton rdoDoubles;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMaximum;
+        private System.Windows.Forms.Label lblDecimalInterval;
+        private System.Windows.Forms.NumericUpDown numDecimalInterval;
+        private System.Windows.Forms.Button lblGetResult;
+        private System.Windows.Forms.Label lblAnswer;
     }
 }
 
